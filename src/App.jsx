@@ -13,10 +13,11 @@ import { useAuthStore } from './store/useAuthStore';
 import './App.css'
 import { useThemeStore } from './store/useThemeStore';
 
-
+//in development mode every useEffect runs twice  and also using stricMOde
 function App() {
- const {authUser,checkAuth,isCheckingAuth} = useAuthStore();
- const{theme}=useThemeStore()
+ const {authUser,checkAuth,isCheckingAuth,onlineUsers} = useAuthStore();
+ const{theme}=useThemeStore();
+ console.log(onlineUsers)
  useEffect(()=>{
      checkAuth()
  },[checkAuth]);
